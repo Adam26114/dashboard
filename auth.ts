@@ -7,7 +7,7 @@ import { UserRole } from "@prisma/client";
 import { getAccountByUserId } from "./data/account";
 
 export const {
-    handlers: { GET, POST },
+    handlers,
     auth,
     signIn,
     signOut,
@@ -43,8 +43,6 @@ export const {
                 session.user.email = token.email as string;
                 session.user.isOAuth = token.isOAuth as boolean;
             }
-
-            // console.log("Session:", session);
             return session;
         },
         async jwt({ token }) {

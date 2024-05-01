@@ -43,7 +43,7 @@ export const login = async (
 
         throw error;
     }
-    
+
     if (validatedFields.success)
         return { success: "Welcome to the Admin Dashboard!" };
 };
