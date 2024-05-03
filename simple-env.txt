@@ -5,9 +5,9 @@ UPLOADTHING_SECRET=
 UPLOADTHING_APP_ID=
 https://uploadthing.com/
 
-
 AUTH_SECRET=
 npx auth secret
+
 
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=

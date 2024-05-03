@@ -136,7 +136,6 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ initialData }) => {
                                         onChange={(url) => field.onChange(url)}
                                         onRemove={() => field.onChange("")}
                                     />
-                                    {/* <ImageUpload/> */}
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>

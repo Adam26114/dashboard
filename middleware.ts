@@ -20,7 +20,6 @@ export default auth((req): Response | void => {
       return;
    }
 
-   console.log("is login",isLoggedIn);
    if (isAuthRoute) {
       if (isLoggedIn) {
          return Response.redirect(new URL(DEFAULF_LOGIN_REDIRECT, nextUrl));
