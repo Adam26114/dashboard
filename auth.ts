@@ -7,7 +7,7 @@ import { UserRole } from "@prisma/client";
 import { getAccountByUserId } from "./data/account";
 
 export const {
-    handlers,
+    handlers: { GET, POST },
     auth,
     signIn,
     signOut,
@@ -37,7 +37,7 @@ export const {
             if (token.role && session.user) {
                 session.user.role = token.role as UserRole;
             }
-    
+
             if (session.user) {
                 session.user.name = token.name as string;
                 session.user.email = token.email as string;

@@ -83,8 +83,8 @@ export const LoginForm = () => {
             headerLabel="Welcome back"
             backButtonLabel="Don't have an account?"
             backButtonHref="/auth/register"
-            showShocial
-            showPolicy
+            // showShocial
+            // showPolicy
         >
             <Form {...form}>
                 <form

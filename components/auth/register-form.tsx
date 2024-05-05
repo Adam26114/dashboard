@@ -78,8 +78,8 @@ export const RegisterForm = () => {
             headerLabel="Create an account"
             backButtonLabel="Already have an account?"
             backButtonHref="/auth/login"
-            showShocial
-            showPolicy
+            // showShocial
+            // showPolicy
         >
             <Form {...form}>
                 <form

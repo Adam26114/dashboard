@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 
 import {
@@ -23,7 +23,7 @@ interface CellActionProps {
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     const router = useRouter();
-    const params = useParams();
+
 
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
@@ -36,7 +36,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     const onConfirm = async () => {
         try {
             setLoading(true);
-            await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
+            await axios.delete(`/api/categories/${data.id}`);
             toast.success("Category deleted.");
             router.refresh();
         } catch (error) {
@@ -71,11 +71,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
                         Copy Id
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                        onClick={() =>
-                            router.push(
-                                `/${params.storeId}/categories/${data.id}`
-                            )
-                        }
+                        onClick={() => router.push(`/categories/${data.id}`)}
                     >
                         <TbEdit className="mr-2 h-4 w-4" />
                         Update

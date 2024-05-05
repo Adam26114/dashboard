@@ -28,18 +28,21 @@ export const ApiAlert: React.FC<ApiAlertProps> = ({
     description,
     variant = "public",
 }) => {
-    const onCopy = () => {
-        admin().then((data) => {
+    const onCopy = async () => {
+        try {
+            const data = await admin();
+
             if (data.error && variant === "admin") {
                 navigator.clipboard.writeText(description);
                 toast.error(data.error);
-            }
-
-            if (data.success || variant === "public") {
+            } else if (data.success || variant === "public") {
                 navigator.clipboard.writeText(description);
                 toast.success("API Route copied to the clipboard.");
             }
-        });
+        } catch (error) {
+            console.error("Error:", error);
+            toast.error("An error occurred while copying the API Route.");
+        }
     };
 
     return (

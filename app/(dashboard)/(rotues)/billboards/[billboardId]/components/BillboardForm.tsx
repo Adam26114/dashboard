@@ -74,8 +74,8 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ initialData }) => {
             router.push(`/billboards`);
             router.refresh();
             toast.success(toastMessage);
-        } catch (err) {
-            toast.error("Something went wrong.");
+        } catch (error: any) {
+            toast.error(error.response?.data || "Something went wrong.");
         } finally {
             setLoading(false);
         }
@@ -88,8 +88,8 @@ const BillboardForm: React.FC<BillboardFormProps> = ({ initialData }) => {
             router.push(`/billboards`);
             router.refresh();
             toast.success("Billboard Deleted.");
-        } catch (err) {
-            toast.error("Unauthorized");
+        } catch (error: any) {
+            toast.error(error.response?.data || "Something went wrong.");
         } finally {
             setLoading(false);
             setOpen(false);
